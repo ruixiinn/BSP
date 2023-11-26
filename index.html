@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Start Page</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mainContain">
+        <div class="backgroundBlur"></div>
+        <div class="searchBlock">
+
+            <div class="searchBar">
+                <input type="text" class="searchInput" placeholder="(*'◡'*) Search ..." onkeydown="keydownEnter(event)">
+                <div class="searchButton" onclick="search()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="suggestion"></div>
+
+        </div>
+        <div class="setting">
+            <p style="margin: 30px;font-size: 30px;font-weight: 500;">Setting :</p>
+            <ul>
+                <label for="searchEngine">search engine:</label> &nbsp;
+                <select id="searchEngine">
+                    <option>Baidu</option>
+                    <option>Bing</option>
+                    <option>Google</option>
+                </select>
+            </ul>
+            <ul>
+                <label for="theme">darkmode:</label> &nbsp;
+                <select id="theme">
+                    <option>ON</option>
+                    <option>OFF</option>
+                    <option>System</option>
+                </select>
+            </ul>
+            <ul>
+                <label for="time">time display:</label> &nbsp;
+                <select id="time">
+                    <option>ON</option>
+                    <option>OFF</option>
+                </select>
+            </ul>
+            <ul>
+                <label for="wallpaper">wallpaper:</label> &nbsp;
+                <select id="wallpaper">
+                    
+                    <option>LoremPicsum</option>
+                    <option>Unsplash</option>
+                    <option>NO</option>
+                </select>
+            </ul>
+            <ul>
+                <label for="BgBlur">background Blur:</label> &nbsp;
+                <select id="BgBlur">
+                    <option>OFF</option>
+                    <option>ON</option>
+                   
+                </select>
+            </ul>
+            <div class="closeButton" onclick="toggleSetting()">Cancel</div>
+            &nbsp;
+            <div class="saveButton" onclick="saveSettings()">Save</div>
+            
+        </div>
+        <div class="buttonBar">
+            <div class="buttonList">
+                <i class="fa-solid fa-gear" onclick="toggleSetting()"></i>
+                <i class="fa-solid fa-circle-half-stroke" onclick="toggleDarkMode()"></i>
+            </div>
+        </div>
+        <div class="timeBar">
+            <div id="timeDisplay">
+
+            </div>
+        </div>
+    </div>
+        <div class="tipbox">
+            <div class="tip">
+                <i class="fa-solid fa-bell"></i>
+                <p class="tipmessage">hello world!</p>
+            </div>
+        </div>
+</body>
+
+</html>

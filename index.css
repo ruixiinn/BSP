@@ -1,0 +1,365 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 20px;
+}
+
+:root {
+    --mainColor: rgba(0, 0, 0, 0.7);
+    --mainColor2: rgb(91, 91, 91);
+    --themeColor: rgba(255, 255, 255, 0.9);
+    --themeColor2: rgba(255, 255, 255, 0.5);
+    --BackgroundColor: rgb(225, 235, 240);
+    --mainFontColor: rgb(0, 0, 0);
+    --FontColor: rgb(204, 204, 204);
+    --maxWidth: 800px;
+    --midWidth:500px;
+}
+
+.dark {
+    --mainColor: rgba(255, 255, 255, 0.7);
+    --mainColor2: rgb(197, 197, 197);
+    --themeColor: rgba(25, 25, 25, 0.9);
+    --themeColor2: rgba(25, 25, 25, 0.5);
+    --BackgroundColor: rgb(35, 37, 37);
+    --mainFontColor: rgb(243, 243, 243);
+    
+
+    
+}
+
+li{
+    list-style: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--mainColor2);
+}
+select{
+    border: none;
+    background:none;
+    color: var(--mainFontColor);
+    border-bottom: 1px solid var(--mainColor);
+}
+option{
+    background-color: var(--themeColor2);
+}
+.mainContain {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--BackgroundColor);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+.backgroundBlur{
+    display: block;
+    height: 100vh;
+    width:100%;
+    backdrop-filter: blur(8px);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.searchBlock {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchInput {
+    width: var(--maxWidth);
+    height: 50px;
+    border-radius: 26px;
+    backdrop-filter: blur(3px);
+    padding: 0 42px 0 20px;
+    font-size: 22px;
+    line-height: 50px;
+    background-color: var(--themeColor2);
+    transition: ease .1s;
+    color: var(--mainFontColor);
+}
+
+.searchInput:hover {
+    background-color: var(--themeColor);
+    transition: ease-in-out .2s;
+
+}
+
+.searchInput:focus {
+    border-radius: 3px;
+    border: 3px solid var(--mainColor);
+    background-color: var(--themeColor);
+    filter: drop-shadow(7px 7px var(--mainColor));
+}
+
+.searchButton {
+    transform: translateX(-40px);
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease .2s;
+    background-color: transparent;
+    color: var(--mainColor);
+}
+
+.searchButton:hover {
+    filter: drop-shadow(0 0 3px var(--mainColor2));
+    background-color: var(--mainColor2);
+    color: var(--themeColor);
+    cursor: pointer;
+}
+
+.fa-magnifying-glass {
+    font-size: 20px;
+    background-color: transparent;
+}
+
+.buttonBar {
+    width: 120px;
+    height: 60px;
+    font-size: 30px;
+    color: var(--mainFontColor);
+    border-radius: 0 10px 10px 0;
+    backdrop-filter: blur(3px);
+    background-color: var(--themeColor2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    transform: translateX(-105px);
+    transition: linear .2s;
+    z-index: 2;
+}
+.timeBar {
+    width: 120px;
+    height: 60px;
+    color: var(--FontColor);
+    border-radius: 0 10px 10px 0;
+    backdrop-filter: blur(3px);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}
+#timeDisplay{
+    font-size: 24px;
+    text-align: center;
+    font-style: italic;
+    color: rgb(197, 197, 197);
+    transition: ease-in-out .2s;
+}
+#timeDisplay:hover{
+    cursor:default;
+}
+.buttonBar:hover {
+    transform: translateX(0px);
+}
+
+.buttonList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+}
+
+.buttonList i {
+    font-size: 22px;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.buttonList i:hover {
+    filter: drop-shadow(0 0 3px var(--mainColor2));
+}
+
+.setting{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--midWidth);
+    height: 95%;
+    backdrop-filter: blur(5px);
+    background-color: var(--themeColor);
+    border-radius: 20px;
+    margin: 30px 30px 30px 0;
+    z-index: 3;
+    transform: translateX(110%);
+    transition: ease-in-out .15s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    color: var(--mainFontColor);
+
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.setting ul{
+    margin: 16px 30px 0 30px;
+}
+.down{
+    transform: translateX(0);
+}
+
+.closeButton{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    background-color: var(--mainFontColor);
+    color: var(--themeColor);
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+
+
+.saveButton{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    background-color: #8b8f46;
+    color: whitesmoke;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.tip{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+.fa-bell{
+    color: var(--mainColor);
+    padding-right: 10px;
+}
+.tipbox{
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background-color: var(--themeColor);
+    padding: 4px 12px ;
+    border-radius: 10px;
+    color: var(--mainFontColor);
+    z-index: 1000;
+    box-shadow: 0 2px 8px var(--themeColor2);
+    display: none;
+    white-space: nowrap;
+    animation: fadeIn 0.4s, fadeOut 0.4s 2.7s;
+}
+@keyframes fadeIn {
+    from {top: -50px; opacity: 0;}
+    to {top: 100px; opacity: 1;} 
+}
+@keyframes fadeOut {
+    from {top: 100px; opacity: 1;}
+    to {top: -50px; opacity: 0;} 
+}
+
+
+
+@media screen and (max-width: 1920px) {
+    body{
+        --maxWidth: 600px;
+        --midWidth:450px;
+    }
+   
+}
+
+@media screen and (max-width: 1200px) {
+    body{
+        --maxWidth: 230px;
+    }
+
+    .searchButton {
+        transform: translateX(10px);
+        height: 50px;
+        width: 50px;
+        background-color: var(--themeColor2);
+    }
+
+    .fa-magnifying-glass {
+        font-size: 24px;
+        background-color: transparent;
+    }
+
+    .searchInput{
+        font-size: 0.9rem;
+    }
+    .searchInput:focus {
+        border-radius: 26px;
+        border: none;
+        background-color: var(--themeColor);
+        filter: none;
+        transform: translateY(-100px);
+
+    }
+    .searchInput:focus + .searchButton {
+        transform: translateY(-100px) translateX(10px);
+    }
+    .searchButton:hover {
+        filter: none;
+        background-color: var(--themeColor2);
+        color: var(--mainColor);
+        cursor: pointer;
+    }
+
+    .buttonBar {
+        transform: translateX(0px);
+        height: 43px;
+    }
+    .setting{
+        width: 100%;
+        backdrop-filter: blur(5px);
+        background-color: var(--themeColor2);
+        margin: 0;
+        border-radius: 0;
+        height: 100%;
+    }
+    .timeBar{
+        backdrop-filter: none;
+        transform: translateY(-40px);
+        font-style: normal;
+       
+    }
+    #timeDisplay{
+        font-size: 30px;
+    }
+}
