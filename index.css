@@ -93,6 +93,7 @@ option{
     background-color: var(--themeColor2);
     transition: ease .1s;
     color: var(--mainFontColor);
+    z-index: 100;
 }
 
 .searchInput:hover {
@@ -355,7 +356,7 @@ option{
     }
     .timeBar{
         backdrop-filter: none;
-        transform: translateY(-40px);
+        transform: translateY(-52px);
         font-style: normal;
        
     }
