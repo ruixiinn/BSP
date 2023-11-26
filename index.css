@@ -121,6 +121,7 @@ option{
     transition: ease .2s;
     background-color: transparent;
     color: var(--mainColor);
+    z-index: 101;
 }
 
 .searchButton:hover {
