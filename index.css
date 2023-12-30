@@ -152,7 +152,7 @@ option{
     left: 0;
     transform: translateX(-105px);
     transition: linear .2s;
-    z-index: 2;
+    z-index: 100;
 }
 .timeBar {
     width: 120px;
@@ -213,12 +213,10 @@ option{
     z-index: 103;
     transform: translateX(110%);
     transition: ease-in-out .15s;
-
     display: flex;
     flex-direction: column;
     justify-content: start;
     color: var(--mainFontColor);
-
     -webkit-user-select: none; 
     -moz-user-select: none; 
     -ms-user-select: none; 
@@ -236,6 +234,7 @@ option{
     position: absolute;
     bottom: 20px;
     left: 20px;
+    line-height: 30px;
     text-align: center;
     width: 100px;
     height: 30px;
@@ -244,14 +243,18 @@ option{
     padding: 8px 20px;
     cursor: pointer;
     border-radius: 20px;
+    transition: all .2s;
 }
-
+.closeButton:hover{
+    font-size: 26px;
+}
 
 
 .saveButton{
     position: absolute;
     bottom: 20px;
     right: 20px;
+    line-height: 30px;
     text-align: center;
     width: 100px;
     height: 30px;
@@ -260,7 +263,13 @@ option{
     padding: 8px 20px;
     cursor: pointer;
     border-radius: 20px;
+    transition: all .2s;
 }
+
+.saveButton:hover{
+    font-size: 26px;
+}
+
 .tip{
     display: flex;
     justify-items: center;
@@ -277,12 +286,10 @@ option{
     transform: translateX(-50%);
     text-align: center;
     background-color: var(--themeColor);
-    padding: 4px 12px ;
-    border-radius: 10px;
+    padding: 6px 13px ;
+    border-radius: 14px;
     color: var(--mainFontColor);
     z-index: 1000;
-    box-shadow: 0 2px 8px var(--themeColor2);
-    display: none;
     white-space: nowrap;
     animation: fadeIn 0.4s, fadeOut 0.4s 2.7s;
 }

@@ -155,12 +155,28 @@ function optionSave(){
     }
 }
 function showTip(newMessage) {
-    var tip = document.querySelector(".tipbox");
-    var tipMessage = document.querySelector('.tipmessage');
+    var tipBox = document.createElement('div');
+    tipBox.className = 'tipbox';
+    
+    var tip = document.createElement('div');
+    tip.className = 'tip';
+    
+    var icon = document.createElement('i');
+    icon.className = 'fas fa-bell';
+    
+    var tipMessage = document.createElement('p');
+    tipMessage.className = 'tipmessage';
     tipMessage.textContent = newMessage;
-    tip.style.display = "block";
+    
+    tip.appendChild(icon);
+    tip.appendChild(tipMessage);
+    tipBox.appendChild(tip);
+    
+    document.body.appendChild(tipBox);
+    
     setTimeout(function(){
-        tip.style.display = "none";
+        tipBox.style.display = "none";
+        document.body.removeChild(tipBox); 
     }, 3000);
 }
 
