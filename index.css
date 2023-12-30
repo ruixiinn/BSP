@@ -358,7 +358,7 @@ option{
     }
     .setting{
         width: 100%;
-        background-color: var(--themeColor2);
+        background-color: var(--BackgroundColor);
         margin: 0;
         border-radius: 0;
         height: 100%;
