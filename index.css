@@ -394,6 +394,7 @@ option{
         display: none;
     }
     i.fa-gear{
+        color: #fff;
         animation: rotate1 6s linear infinite;
     }
     @keyframes rotate1 {
