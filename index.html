@@ -20,14 +20,20 @@
         <div class="searchBlock">
 
             <div class="searchBar">
-                <input type="text" class="searchInput" placeholder="(*'◡'*) Search ..." onkeydown="keydownEnter(event)">
+                <input type="text" class="searchInput" placeholder="(*'◡'*) Search ..." onkeydown="keydownEnter(event)" onblur="checkFocus()">
                 <div class="searchButton" onclick="search()">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-
-            <div class="suggestion"></div>
-
+        </div>
+        <div class="searchSuggestion" style="display: none;">
+            <ul class="suggestionList">
+                <li onclick="getcontain(this)">1</li>
+                <li onclick="getcontain(this)">2</li>
+                <li onclick="getcontain(this)">3</li>
+                <li onclick="getcontain(this)">4</li>
+                <li onclick="getcontain(this)">5</li>
+            </ul>
         </div>
         <div class="setting">
             <p style="margin: 30px;font-size: 30px;font-weight: 500;">Setting :</p>
@@ -40,18 +46,25 @@
                 </select>
             </ul>
             <ul>
+                <label for="searchSuggestion">search suggestion:</label> &nbsp;
+                <select id="searchSuggestion">
+                    <option>On</option>
+                    <option>Off</option>
+                </select>
+            </ul>
+            <ul>
                 <label for="theme">darkmode:</label> &nbsp;
                 <select id="theme">
-                    <option>ON</option>
                     <option>OFF</option>
+                    <option>ON</option>
                     <option>System</option>
                 </select>
             </ul>
             <ul>
                 <label for="time">time display:</label> &nbsp;
                 <select id="time">
-                    <option>ON</option>
                     <option>OFF</option>
+                    <option>ON</option>
                 </select>
             </ul>
             <ul>
@@ -89,5 +102,4 @@
         </div>
     </div>
 </body>
-
 </html>
