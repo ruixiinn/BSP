@@ -230,7 +230,7 @@ function suggest() {
             document.getElementsByTagName("head")[0].removeChild(scriptElement);
         }
         scriptElement = document.createElement("script");
-        scriptElement.src = "http://suggestion.baidu.com/su?wd=" + inputValue;
+        scriptElement.src = "https://suggestion.baidu.com/su?wd=" + inputValue;
         scriptElement.setAttribute('data-script-id', 'search-suggestion');
         document.getElementsByTagName("head")[0].appendChild(scriptElement);
     });
