@@ -250,6 +250,7 @@ option{
     font-size: 26px;
     transition: all .2s;
     cursor: pointer;
+    color: var(--mainFontColor);
 }
 
 .buttonList i:hover {
