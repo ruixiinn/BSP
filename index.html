@@ -48,8 +48,8 @@
             <ul>
                 <label for="searchSuggestion">search suggestion:</label> &nbsp;
                 <select id="searchSuggestion">
-                    <option>On</option>
-                    <option>Off</option>
+                    <option>ON</option>
+                    <option>OFF</option>
                 </select>
             </ul>
             <ul>
@@ -92,8 +92,16 @@
         <div class="buttonBar">
             <div class="buttonList">
                 <i class="fa-solid fa-gear" onclick="toggleSetting()"></i>
-                <i class="fa-solid fa-circle-half-stroke" onclick="toggleDarkMode()"></i>
+                <i class="fa-solid fa-chart-bar" onclick="toggleSearch()"></i>
             </div>
+            
+        </div>
+        <div class="searchlist">
+            <ul class="searchEngineList">
+                <li onclick="changeSearchEngine(this)">Baidu</li>
+                <li onclick="changeSearchEngine(this)">Bing</li>
+                <li onclick="changeSearchEngine(this)">Google</li>
+            </ul>
         </div>
         <div class="timeBar">
             <div id="timeDisplay">

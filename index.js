@@ -67,23 +67,16 @@ function DarkMode() {
         }
     }
 };
-function toggleDarkMode() {
-    document.body.classList.toggle('dark');
-    var darkModeValue = localStorage.getItem('darkmode');
-    if (darkModeValue === 'ON') {
-        localStorage.setItem('darkmode', "OFF");
-        var newMessage = "Turn off dark mode.";
-        showTip(newMessage);
-    } else {
-        localStorage.setItem('darkmode', "ON");
-        var newMessage = "Turn on dark mode.";
-        showTip(newMessage);
-    }
-};
+
 function toggleSetting() {
     document.querySelector('.setting').classList.toggle('down');
 };
-
+function toggleSearch() {
+    document.querySelector('.searchlist').classList.toggle('up');
+    timeout = setTimeout(function () {
+        document.querySelector('.searchlist').classList.remove('up');
+    }, 9000);
+};
 
 function saveSettings() {
     var searchEngineValue = document.getElementById('searchEngine').value;
@@ -107,7 +100,7 @@ function saveSettings() {
     setWallpaper();
     backgroundBlur()
 
-    if (backgroundValue == "NO" || searchSuggestionValue == "Off") {
+    if (backgroundValue == "NO" || searchSuggestionValue == "OFF") {
         var newMessage = "Some settings need a page refresh.";
     } else {
         var newMessage = "Sucessfully saved.";
@@ -122,8 +115,6 @@ function optionSave() {
     var savedTime = localStorage.getItem('time');
     var savedwallpaper = localStorage.getItem('wallpaper');
     var savedBackgroundBlur = localStorage.getItem('backgroundBlur');
-
-
     if (savedSearchEngine) {
         document.getElementById('searchEngine').value = savedSearchEngine;
     }
@@ -169,6 +160,14 @@ function showTip(newMessage) {
     }, 3000);
 }
 
+function changeSearchEngine(clickedElement){
+    var searchEngineValue = clickedElement.textContent;
+    localStorage.setItem('searchEngine', searchEngineValue);
+    var newMessage = `Successfully saved as ${searchEngineValue}.`;
+    showTip(newMessage);
+    document.querySelector('.searchlist').classList.remove('up');
+}
+
 function search() {
     const searchEngines = {
         Baidu: 'https://www.baidu.com/s?ie=UTF-8&wd=',
@@ -205,7 +204,7 @@ function checkFocus() {
 
 function suggest() {
     var sugItem = localStorage.getItem('searchSuggestion');
-    if(sugItem === 'Off'){
+    if(sugItem === 'OFF'){
         return;
     }else{
     var input = document.querySelector('.searchInput');
@@ -222,7 +221,7 @@ function suggest() {
                 sug.style.display = 'flex';
                 timeout = setTimeout(function ()  {
                     sug.style.display = 'none';
-                }, 7000);
+                }, 9000);
             }
         }
         var inputValue = event.target.value;
