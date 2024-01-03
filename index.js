@@ -73,9 +73,6 @@ function toggleSetting() {
 };
 function toggleSearch() {
     document.querySelector('.searchlist').classList.toggle('up');
-    timeout = setTimeout(function () {
-        document.querySelector('.searchlist').classList.remove('up');
-    }, 9000);
 };
 
 function saveSettings() {
