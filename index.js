@@ -67,7 +67,11 @@ function DarkMode() {
         }
     }
 };
-
+function toggleTheme(){
+    document.body.classList.toggle('dark');
+    var newMessage = 'Temporary switch successful.';
+    showTip(newMessage);
+}
 function toggleSetting() {
     document.querySelector('.setting').classList.toggle('down');
 };
@@ -154,7 +158,7 @@ function showTip(newMessage) {
     setTimeout(function () {
         tipBox.style.display = "none";
         document.body.removeChild(tipBox);
-    }, 3000);
+    }, 4000);
 }
 
 function changeSearchEngine(clickedElement){
